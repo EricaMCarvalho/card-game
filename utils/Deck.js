@@ -29,6 +29,22 @@ class Deck {
       this.cards[j] = temp;
     }
   }
+
+  deal(numPlayers) {
+    const handSize = Math.floor(52 / numPlayers);
+    const chunked = [];
+
+    for (let item of this.cards) {
+      const last = chunked[chunked.length - 1];
+      if (last && last.length < handSize) {
+        last.push(item);
+      } else {
+        chunked.push([item]);
+      }
+    }
+
+    return chunked;
+  }
 }
 
 class Card {
