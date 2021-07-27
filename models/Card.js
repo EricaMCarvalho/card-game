@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const CardSchema = new mongoose.Schema({
-  image: String,
   suit: {
     type: String,
     enum: ['HEARTS', 'CLUBS', 'SPADES', 'DIAMONDS'],
