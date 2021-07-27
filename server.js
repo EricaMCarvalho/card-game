@@ -16,11 +16,13 @@ const connectDB = require('./config/database');
 const errorHandler = require('./middleware/errorHandler');
 
 // Routers
+const authRouter = require('./routes/authRouter');
 
 app.use(express.json());
 app.use(cookieParser());
 
 // Mount routes
+app.use('/api/auth', authRouter);
 
 app.use(errorHandler);
 
